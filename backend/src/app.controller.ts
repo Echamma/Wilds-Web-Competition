@@ -9,4 +9,13 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('health')
+  getStatus() {
+    return {
+      status: 'UP',
+      timestamp: new Date().toISOString(),
+      message: 'Wilds Web Competition API is running'
+    };
+  }
 }
